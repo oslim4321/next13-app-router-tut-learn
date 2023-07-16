@@ -98,7 +98,7 @@ const contact = () => {
               alt="contact"
               width={"500"}
               height={"500"}
-              className={"w-[70%]"}
+              className={"w-[]"}
             />
           </div>
         </div>
