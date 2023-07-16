@@ -11,3 +11,13 @@ body {
   background-color: black;
   color: #bbb;
 }
+.categoryList {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.categoryList:nth-child(2n + 1) {
+  flex-direction: row-reverse;
+}

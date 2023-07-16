@@ -10,3 +10,13 @@ export const ImageComp = ({ src, width, height, className }) => {
     />
   );
 };
+
+export const Button = ({ text, className }) => {
+  return (
+    <button
+      className={`px-10 py-5 cursor-pointer bg-[#53c28b] border-0 rounded text-white ${className}`}
+    >
+      {text}
+    </button>
+  );
+};

@@ -11,7 +11,7 @@ const about = () => {
             // fill={true}
             width={500}
             height={500}
-            alt=""
+            alt="img"
             className={"w-full h-full object-center"}
           />
           <div className={"bg-green-400 w-[50%]"}>
