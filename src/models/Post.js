@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
 
-const postSchema = new mongoose.Schema(
+const { Schema } = mongoose;
+
+const postSchema = new Schema(
   {
     title: {
       type: String,
@@ -22,8 +24,7 @@ const postSchema = new mongoose.Schema(
       unique: true,
       required: true,
     },
-
-    password: {
+    image: {
       type: String,
       required: true,
     },
@@ -31,4 +32,4 @@ const postSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-export default mongoose.model("User", postSchema);
+export default mongoose.models.Post || mongoose.model("Post", postSchema);

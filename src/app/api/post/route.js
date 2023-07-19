@@ -6,10 +6,11 @@ export const GET = async (request) => {
   try {
     // fetch
     await connect();
-    const posts = await Post.find(s);
+    const posts = await Post.find();
 
     return new NextResponse(posts, { status: 200 });
   } catch (error) {
-    return new NextResponse("database error", { status: 500 });
+    console.log(error);
+    return new NextResponse("database error", error, { status: 500 });
   }
 };
