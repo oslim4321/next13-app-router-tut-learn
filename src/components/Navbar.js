@@ -1,5 +1,6 @@
 import Link from "next/link";
 import React from "react";
+import DarkModeToggle from "./DarkModeToggle";
 
 const Navbar = () => {
   const links = [
@@ -70,6 +71,7 @@ const Navbar = () => {
           </button>
           <div className="hidden w-full md:block md:w-auto">
             <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0   dark:border-gray-700 py-5 flex items-center">
+              <DarkModeToggle />
               {links.map((elem) => (
                 <li>
                   <Link

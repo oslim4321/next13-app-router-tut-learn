@@ -8,7 +8,7 @@
 }
 
 body {
-  background-color: black;
+  /* background-color: black; */
   color: #bbb;
 }
 .categoryList {
@@ -20,4 +20,16 @@ body {
 
 .categoryList:nth-child(2n + 1) {
   flex-direction: row-reverse;
+}
+
+.darkMode {
+  background-color: black !important;
+  color: white !important;
+}
+.lightMode {
+  background-color: white !important;
+  color: black !important;
+}
+.theme {
+  transition: 1s all ease;
 }
