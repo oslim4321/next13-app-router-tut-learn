@@ -7,17 +7,17 @@ const Portfolio = () => {
     {
       img: "/images/illustration.png",
       title: "Illustration",
-      url: "illustration",
+      url: "illustrations",
     },
     {
       img: "/images/websites.jpg",
       title: "Website",
-      url: "website",
+      url: "websites",
     },
     {
       img: "/images/apps.jpg",
-      title: "Applicarion",
-      url: "application",
+      title: "applications",
+      url: "illustrations",
     },
   ];
   return (
