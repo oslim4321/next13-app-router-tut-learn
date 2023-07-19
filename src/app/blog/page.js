@@ -13,13 +13,12 @@ async function getData() {
 
 const Blog = async () => {
   const data = await getData();
-  console.log(data);
   return (
     <div className="cont my-10">
       {data.map((post) => (
         <Link
-          href="/blog/1"
-          className="flex items-center gap-x-5 border mb-2"
+          href={`/blog/${post.id}`}
+          className="flex items-center gap-x-5 border my-5"
           key={post.id}
         >
           <div>
@@ -30,11 +29,8 @@ const Blog = async () => {
             />
           </div>
           <div>
-            <h2 className="text-3xl">Lorem ipsum dolor sit amet.</h2>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam,
-              accusantium?
-            </p>
+            <h2 className="text-3xl">{post.title}</h2>
+            <p>{post.body}</p>
           </div>
         </Link>
       ))}

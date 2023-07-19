@@ -1,7 +1,19 @@
 import { ImageComp } from "@/components/util";
 import React from "react";
+import { notFound } from "next/navigation";
 
-const Blog = () => {
+async function getData(id) {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`);
+
+  if (!res.ok) {
+    return notFound();
+  }
+  return res.json();
+}
+
+const Blog = async ({ params }) => {
+  const data = await getData(params.id);
+  console.log(data);
   return (
     <div>
       <div className="max-w-screen-xl mx-auto">
@@ -19,8 +31,7 @@ const Blog = () => {
                 Nutrition
               </a>
               <h2 className="text-4xl font-semibold text-gray-100 leading-tight">
-                Pellentesque a consectetur velit, ac molestie ipsum. Donec
-                sodales, massa et auctor.
+                {data.title}
               </h2>
               <div className="flex mt-3">
                 <ImageComp
