@@ -22,15 +22,17 @@ const Blog = async () => {
           className="flex items-center gap-x-5 border my-5"
           key={post.id}
         >
-          {/* <div>
-            <ImageComp
-              src="/images/contact.png"
+          <div>
+            {/* <ImageComp
+              src={post.image}
               className={"w-[200px]"}
               alt={post.title}
-            />
-          </div> */}
+            /> */}
+          </div>
           <div>
-            <h2 className="text-3xl">{post.title}</h2>
+            <h2 className="text-3xl">
+              {post.title} {post.image}
+            </h2>
             <p>{post.content}</p>
           </div>
         </Link>
