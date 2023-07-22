@@ -1,4 +1,5 @@
 "use client";
+import { useSession } from "next-auth/react";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -26,7 +27,8 @@ const Dashboard = () => {
     getData();
   }, []);
 
-  console.log(data);
+  const session = useSession();
+  console.log(session);
   return (
     <>
       {loding ? (
@@ -34,7 +36,7 @@ const Dashboard = () => {
       ) : err ? (
         <p>Error Fetching data</p>
       ) : (
-        data?.map((post) => <p>{post.id}</p>)
+        data?.map((post) => <p key={post.id}>{post.title}</p>)
       )}
     </>
   );
