@@ -3,13 +3,17 @@ import Link from "next/link";
 import React from "react";
 
 async function getData() {
-  const res = await fetch("http://localhost:3000/api/post");
-
+  const res = await fetch("http://localhost:3001/api/post");
   if (!res.ok) {
     throw new Error("failed to fetch data");
   }
   return res.json();
 }
+
+export const metadata = {
+  title: "Blog page",
+  description: "this is oslim my page blog site",
+};
 
 const Blog = async () => {
   const data = await getData();
@@ -23,16 +27,14 @@ const Blog = async () => {
           key={post.id}
         >
           <div>
-            {/* <ImageComp
+            <ImageComp
               src={post.image}
               className={"w-[200px]"}
               alt={post.title}
-            /> */}
+            />
           </div>
           <div>
-            <h2 className="text-3xl">
-              {post.title} {post.image}
-            </h2>
+            <h2 className="text-3xl">{post.title}</h2>
             <p>{post.content}</p>
           </div>
         </Link>

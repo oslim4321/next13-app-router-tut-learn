@@ -6,6 +6,7 @@ export const GET = async (request) => {
   try {
     // fetch
     await connect();
+    console.log("connected");
     const posts = await Post.find();
 
     return new NextResponse(JSON.stringify(posts), { status: 200 });
