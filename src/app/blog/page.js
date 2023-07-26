@@ -3,7 +3,7 @@ import Link from "next/link";
 import React from "react";
 
 async function getData() {
-  const res = await fetch("http://localhost:3001/api/post");
+  const res = await fetch("http://localhost:3000/api/post");
   if (!res.ok) {
     throw new Error("failed to fetch data");
   }
