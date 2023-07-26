@@ -2,6 +2,7 @@
 
 import { signIn, signOut, useSession } from "next-auth/react";
 import React from "react";
+import LoginCompo from "./LoginCompo";
 
 const Login = () => {
   const { data: session, status } = useSession();
@@ -19,12 +20,9 @@ const Login = () => {
           <button onClick={() => signOut()}>Sign out</button>
         </div>
       ) : (
-        <>
-          <div className="my-10">
-            <div>Not signed in.</div>
-            <button onClick={() => signIn("google")}>Login with Google</button>
-          </div>
-        </>
+        <div className="mt-5">
+          <LoginCompo />
+        </div>
       )}
     </>
   );
