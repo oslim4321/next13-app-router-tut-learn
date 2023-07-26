@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import React from "react";
 import DarkModeToggle from "./DarkModeToggle";
+import { signOut, useSession } from "next-auth/react";
 
 const Navbar = () => {
   const links = [
@@ -35,6 +37,7 @@ const Navbar = () => {
       url: "/dashboard",
     },
   ];
+  const session = useSession();
 
   return (
     <div>
@@ -73,7 +76,7 @@ const Navbar = () => {
             <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg  md:flex-row md:space-x-8 md:mt-0 md:border-0   dark:border-gray-700 py-5 flex items-center">
               <DarkModeToggle />
               {links.map((elem) => (
-                <li>
+                <li key={elem.id}>
                   <Link
                     href={elem.url}
                     className="block py-2 pl-3 pr-4 md:p-0 "
@@ -82,11 +85,16 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
-              <li>
-                <button className=" border-0 text-white cursor-pointer bg-[#53c28b] py-2 px-4">
-                  Logout
-                </button>
-              </li>
+              {session.status === "authenticated" && (
+                <li>
+                  <button
+                    className=" border-0 text-white cursor-pointer bg-[#53c28b] py-2 px-4"
+                    onClick={signOut}
+                  >
+                    Logout
+                  </button>
+                </li>
+              )}
             </ul>
           </div>
         </div>
