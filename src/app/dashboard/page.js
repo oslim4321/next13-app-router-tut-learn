@@ -1,5 +1,6 @@
 "use client";
 import { useSession } from "next-auth/react";
+import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import { useState } from "react";
 
@@ -28,28 +29,35 @@ const Dashboard = () => {
   // }, []);
 
   const session = useSession();
-  console.log(session);
-  return (
-    <>
-      <div className="text-white">
-        {session.status === "loading" ? (
-          "loading..."
-        ) : session.status === "authenticated" ? (
-          <p>{session.data.user.name}</p>
-        ) : (
-          "Hello Guest"
-        )}
-      </div>
-      {/* {loding ? (
+  const router = useRouter();
+  if (session.status === "loading") {
+    return <p>Loading..</p>;
+  }
+  if (session.status === "unauthenticated") {
+    router?.push("/dashboard/login");
+  }
+  if (session.status === "authenticated")
+    return (
+      <>
+        <div className="text-white">
+          {session.status === "loading" ? (
+            "loading..."
+          ) : session.status === "authenticated" ? (
+            <p>{session.data.user.name}</p>
+          ) : (
+            "Hello Guest"
+          )}
+        </div>
+        {/* {loding ? (
         <p>Loading...</p>
       ) : err ? (
         <p>Error Fetching data</p>
       ) : (
         data?.map((post) => <p key={post.id}>{post.title}</p>)
       )} */}
-      <p>dashboard</p>
-    </>
-  );
+        <p>dashboard</p>
+      </>
+    );
 };
 
 export default Dashboard;

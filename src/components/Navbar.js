@@ -85,13 +85,22 @@ const Navbar = () => {
                   </Link>
                 </li>
               ))}
-              {session.status === "authenticated" && (
+              {session.status === "authenticated" ? (
                 <li>
                   <button
                     className=" border-0 text-white cursor-pointer bg-[#53c28b] py-2 px-4"
                     onClick={signOut}
                   >
                     Logout
+                  </button>
+                </li>
+              ) : (
+                <li>
+                  <button
+                    className=" border-0 text-white cursor-pointer bg-[#53c28b] py-2 px-4"
+                    onClick={signOut}
+                  >
+                    Login
                   </button>
                 </li>
               )}
