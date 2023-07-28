@@ -6,22 +6,18 @@ const postSchema = new Schema(
   {
     title: {
       type: String,
-      unique: true,
       required: true,
     },
     username: {
       type: String,
-      unique: true,
       required: true,
     },
     desc: {
       type: String,
-      unique: true,
       required: true,
     },
     content: {
       type: String,
-      unique: true,
       required: true,
     },
     image: {
