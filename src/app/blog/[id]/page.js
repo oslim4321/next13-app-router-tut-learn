@@ -3,7 +3,7 @@
 // import { notFound } from "next/navigation";
 
 // async function getData(id) {
-//   const res = await fetch(`http://localhost:3001/api/post/${id}`);
+//   const res = await fetch(`${process.env.BASE_URL}/api/post/${id}`);
 //   console.log(res);
 //   if (!res.ok) {
 //     return notFound();

@@ -3,7 +3,7 @@
 // import React from "react";
 
 // async function getData() {
-//   const res = await fetch("http://localhost:3000/api/post");
+//   const res = await fetch(`${process.env.BASE_URL}/api/post`);
 //   if (!res.ok) {
 //     throw new Error("failed to fetch data");
 //   }
