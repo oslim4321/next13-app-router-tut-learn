@@ -17,7 +17,7 @@ export const metadata = {
 
 const Blog = async () => {
   // const data = await getData();
-  console.log(data);
+  // console.log(data);
   return "kf";
   // <div className="cont my-10">
   //   {data.map((post) => (
