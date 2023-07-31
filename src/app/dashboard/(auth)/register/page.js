@@ -4,8 +4,7 @@ import Register from "./Register";
 const page = () => {
   return (
     <div>
-      ddk
-      {/* <Register /> */}
+      <Register />
     </div>
   );
 };

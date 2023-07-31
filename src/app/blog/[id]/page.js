@@ -2,30 +2,29 @@ import { ImageComp } from "@/components/util";
 import React from "react";
 import { notFound } from "next/navigation";
 
-// async function getData(id) {
-//   const res = await fetch(`${process.env.BASE_URL}/api/post/${id}`);
-//   console.log(res);
-//   if (!res.ok) {
-//     return notFound();
-//   }
-//   return res.json();
-// // }
-// export async function generateMetadata({ params }) {
-//   const post = await getData(params.id);
+async function getData(id) {
+  const res = await fetch(`${process.env.BASE_URL}/api/post/${id}`);
+  console.log(res);
+  if (!res.ok) {
+    return notFound();
+  }
+  return res.json();
+}
+export async function generateMetadata({ params }) {
+  const post = await getData(params.id);
 
-//   return {
-//     title: post.title,
-//     description: post.desc,
-//   };
-// }
+  return {
+    title: post.title,
+    description: post.desc,
+  };
+}
 
 const Blog = async ({ params }) => {
-  // const data = await getData(params.id);
+  const data = await getData(params.id);
 
   return (
     <div>
-      hello
-      {/* <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-screen-xl mx-auto">
         <main className=" relative">
           <div className="mb-4 md:mb-0 w-full max-w-screen-md mx-auto relative">
             <ImageComp
@@ -65,7 +64,7 @@ const Blog = async ({ params }) => {
             <p className="pb-6">{data.desc}</p>
           </div>
         </main>
-      </div> */}
+      </div>
     </div>
   );
 };
