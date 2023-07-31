@@ -1,12 +1,13 @@
-// import React from "react";
-// import Register from "./Register";
+import React from "react";
+import Register from "./Register";
 
-// const page = () => {
-//   return (
-//     <div>
-//       <Register />
-//     </div>
-//   );
-// };
+const page = () => {
+  return (
+    <div>
+      ddk
+      {/* <Register /> */}
+    </div>
+  );
+};
 
-// export default page;
+export default page;

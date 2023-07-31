@@ -1,12 +1,13 @@
-// import React from "react";
-// import Login from "./Login";
+import React from "react";
+import Login from "./Login";
 
-// const page = () => {
-//   return (
-//     <div>
-//       <Login />
-//     </div>
-//   );
-// };
+const page = () => {
+  return (
+    <div>
+      hdhhd
+      {/* <Login /> */}
+    </div>
+  );
+};
 
-// export default page;
+export default page;
