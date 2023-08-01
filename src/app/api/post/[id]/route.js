@@ -6,8 +6,9 @@ export const GET = async (request, { params }) => {
   const { id } = params;
   console.log(id);
   try {
+    await connect();
     const post = await Post.findById(id);
-    console.log(post);
+
     return new NextResponse(JSON.stringify(post), { status: 200 });
     // await connect();
   } catch (error) {
